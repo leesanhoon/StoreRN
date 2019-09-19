@@ -9,9 +9,10 @@ import {
 import motoImg from '../assets/motor.png'
 
 export default function CatelogyListitem(props) {
+    const { category } = props;
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>CatelogyListitem</Text>
+            <Text style={styles.title}>{category.name}</Text>
             <Image style={styles.catelogyImg} source={motoImg} />
         </View>
     )
@@ -22,10 +23,10 @@ const styles = StyleSheet.create({
     container: {
         alignItems: "center",
         padding: 16,
-        borderRadius:10,
-        backgroundColor:'#a9a9a9',
-        marginBottom:5,
-        shadowColor:"#0000",
+        borderRadius: 10,
+        backgroundColor: '#FFF',
+        marginBottom: 15,
+        shadowColor: "#0000",
         shadowOpacity: 0.3,
         shadowRadius: 10,
         shadowOffset: {
