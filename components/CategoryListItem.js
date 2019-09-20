@@ -3,20 +3,22 @@ import {
     View,
     Image,
     Text,
-    StyleSheet
+    StyleSheet,
+    TouchableOpacity,
 } from 'react-native'
 
 import motoImg from '../assets/motor.png'
 
 export default function CatelogyListitem(props) {
-    const { category } = props;
+    const { category, onPress } = props;
     return (
-        <View style={styles.container}>
+        <TouchableOpacity onPress={onPress}>
+            <View style={styles.container}>
             <Text style={styles.title}>{category.name}</Text>
             <Image style={styles.catelogyImg} source={motoImg} />
         </View>
+        </TouchableOpacity>
     )
-
 }
 
 const styles = StyleSheet.create({
@@ -24,7 +26,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         padding: 16,
         borderRadius: 10,
-        backgroundColor: '#FFF',
+        backgroundColor: '#f0ffff',
         marginBottom: 15,
         shadowColor: "#0000",
         shadowOpacity: 0.3,
